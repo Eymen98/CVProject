@@ -1,4 +1,5 @@
 ﻿using CVProject.Core.Entities;
+using CVProject.Core.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace CVProject.Core.Interfaces
 {
-    public interface IPersonService
+    public interface IPersonRepository : IRepository<Person>
     {
-        public Person GetPerson(int id);
-
-        public int CreatePerson(Person person);
-        
+        //Write here custom methods that are required for specific requirements.
     }
 }
