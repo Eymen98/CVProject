@@ -1,10 +1,16 @@
+using CVProject.Core.Interfaces.Repository;
 using CVProject.Infrastructure.Data;
+using CVProject.Infrastructure.Repository;
+using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 
 // Add services to the container.
