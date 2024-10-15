@@ -9,6 +9,6 @@ namespace CVProject.Core.Interfaces.Repository
 {
     public interface IPersonRepository : IRepository<Person>
     {
-        //Write here custom methods that are required for specific requirements.
+        //Write here  methods that are required for specific requirements.
     }
 }
