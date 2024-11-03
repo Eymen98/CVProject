@@ -10,14 +10,14 @@ namespace CVProject.Core.DTOs
     public class PersonDto
     {
         public int Id { get; set; }
-        
-        [Required]
-        public string? Name { get; set; }
-        
-        [Required]
-        public string? SurName { get; set; }
-        
-        [Required]
         public string? JobTitle { get; set; }
+        public string? Name { get; set; }
+        public string? SurName { get; set; }
+        public string? Email { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? LinkedInProfile { get; set; }
+        public string? GithubProfile { get; set; }
+        public string? Summary { get; set; }
+        public string? ImageUrl { get; set; }
     }
 }
