@@ -12,8 +12,22 @@ namespace CVProject.Api.Controllers
             _logger = logger;
         }
 
+        [HttpGet("getpersoninformations")]
+        public string GetPersonInformations()
+        {
+            try
+            {
+                var  
 
-        
+            }
+            catch (Exception ex )
+            {
+
+            _logger.LogError(ex.ToString());
+            }
+        }
+
+
 
     }
 }

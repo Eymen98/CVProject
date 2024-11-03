@@ -13,12 +13,26 @@ namespace CVProject.Core.Entities
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+       
+        [StringLength(100)]
         public string? JobTitle { get; set; }
+
+        [StringLength(100)]
         public string? Name { get; set; }
+
+        [StringLength(100)]
         public string? SurName { get; set; }
+        
+        [StringLength(100)]
         public string? Email { get; set; }
+
+        [StringLength(100)]
         public string? PhoneNumber { get; set; }
+
+        [StringLength(500)]
         public string? Address { get; set; }
+        
+        [StringLength(10)]
         public string? DrivingLicense { get; set; }
         public int? MaritalStatus { get; set; }  //Single, Married, Divorced
         public string? WebsiteUrl { get; set; }
