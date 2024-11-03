@@ -20,7 +20,6 @@ namespace CVProject.Core.DTOs
         public string? Summary { get; set; }
         public string? ImageUrl { get; set; }
         public string? CvUrl { get; set; }
-        public string? XProfile { get; set; }
         public string? InstagramProfile { get; set; }
     }
 }

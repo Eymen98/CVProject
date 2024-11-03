@@ -1,3 +1,4 @@
+using CVProject.Core.Helper;
 using CVProject.Core.Interfaces.Repository;
 using CVProject.Infrastructure.Data;
 using CVProject.Infrastructure.Repository;
@@ -12,7 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(ApiMappingProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
