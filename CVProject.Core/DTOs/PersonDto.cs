@@ -23,7 +23,6 @@ namespace CVProject.Core.DTOs
         public string? CvUrl { get; set; }
         public string? InstagramProfile { get; set; }
         public string? XProfile { get; set; }
-        public List<Experience> Experiences { get; set; }
-        public List<Education> Educations { get; set; }
+        
     }
 }

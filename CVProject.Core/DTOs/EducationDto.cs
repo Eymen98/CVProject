@@ -16,6 +16,6 @@ namespace CVProject.Core.DTOs
         public string? Institution { get; set; }
         public string? Grade { get; set; }
         public string? Period { get; set; }
-        public Person Person { get; set; }
+       
     }
 }

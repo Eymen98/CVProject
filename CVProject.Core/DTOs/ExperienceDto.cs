@@ -16,6 +16,6 @@ namespace CVProject.Core.DTOs
         public string? Company { get; set; }
         public string? Description { get; set; }
         public string? EmploymentDuration { get; set; }
-        public Person Person { get; set; }
+       
     }
 }

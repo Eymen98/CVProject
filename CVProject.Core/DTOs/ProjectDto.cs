@@ -14,6 +14,5 @@ namespace CVProject.Core.DTOs
         public string? ProjectName { get; set; }
         public string? Description { get; set; }
         public string? period { get; set; }
-        public Person Person { get; set; }
     }
 }
