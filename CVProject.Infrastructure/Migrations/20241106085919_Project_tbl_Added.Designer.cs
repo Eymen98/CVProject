@@ -4,6 +4,7 @@ using CVProject.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CVProject.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241106085919_Project_tbl_Added")]
+    partial class Project_tbl_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,7 +87,7 @@ namespace CVProject.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnType("int");
 
                     b.Property<string>("Position")
@@ -225,7 +228,9 @@ namespace CVProject.Infrastructure.Migrations
                 {
                     b.HasOne("CVProject.Core.Entities.Person", "Person")
                         .WithMany("Experiences")
-                        .HasForeignKey("PersonId");
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Person");
                 });

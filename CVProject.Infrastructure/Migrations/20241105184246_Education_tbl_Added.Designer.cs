@@ -4,6 +4,7 @@ using CVProject.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CVProject.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241105184246_Education_tbl_Added")]
+    partial class Education_tbl_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,7 +87,7 @@ namespace CVProject.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnType("int");
 
                     b.Property<string>("Position")
@@ -175,41 +178,6 @@ namespace CVProject.Infrastructure.Migrations
                     b.ToTable("Persons");
                 });
 
-            modelBuilder.Entity("CVProject.Core.Entities.Project", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ProjectName")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("period")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Projects");
-                });
-
             modelBuilder.Entity("CVProject.Core.Entities.Education", b =>
                 {
                     b.HasOne("CVProject.Core.Entities.Person", "Person")
@@ -225,15 +193,6 @@ namespace CVProject.Infrastructure.Migrations
                 {
                     b.HasOne("CVProject.Core.Entities.Person", "Person")
                         .WithMany("Experiences")
-                        .HasForeignKey("PersonId");
-
-                    b.Navigation("Person");
-                });
-
-            modelBuilder.Entity("CVProject.Core.Entities.Project", b =>
-                {
-                    b.HasOne("CVProject.Core.Entities.Person", "Person")
-                        .WithMany("Projects")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -246,8 +205,6 @@ namespace CVProject.Infrastructure.Migrations
                     b.Navigation("Educations");
 
                     b.Navigation("Experiences");
-
-                    b.Navigation("Projects");
                 });
 #pragma warning restore 612, 618
         }

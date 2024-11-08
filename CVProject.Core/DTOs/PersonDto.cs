@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CVProject.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,5 +22,8 @@ namespace CVProject.Core.DTOs
         public string? ImageUrl { get; set; }
         public string? CvUrl { get; set; }
         public string? InstagramProfile { get; set; }
+        public string? XProfile { get; set; }
+        public List<Experience> Experiences { get; set; }
+        public List<Education> Educations { get; set; }
     }
 }

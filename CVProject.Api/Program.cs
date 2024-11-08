@@ -6,6 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200");
+        });
+
+    options.AddPolicy("AnotherPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://www.contoso.com")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
+
+
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -13,6 +31,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
+//Mapper
 builder.Services.AddAutoMapper(typeof(ApiMappingProfile));
 
 builder.Services.AddControllers();
@@ -30,6 +49,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 

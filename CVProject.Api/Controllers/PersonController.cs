@@ -2,12 +2,14 @@
 using CVProject.Core.DTOs;
 using CVProject.Core.Entities;
 using CVProject.Core.Interfaces.Repository;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVProject.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
+    [EnableCors("MyPolicy")]
     public class PersonController : ControllerBase
     {
         private readonly ILogger<PersonController> _logger;
@@ -38,6 +40,22 @@ namespace CVProject.Api.Controllers
             }
             return new PersonDto();
         }
+
+        //[HttpGet("getpersonexperience")]
+        //public Experience GetPersonExperience(int userId)
+        //{
+        //    try
+        //    {
+        //        var experiencResult = _personRepository.GetAll();
+        //        return view(experiencResult);
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        _logger.LogError(ex.ToString());
+        //    }
+        //    return new Experience();
+        //}
 
 
 

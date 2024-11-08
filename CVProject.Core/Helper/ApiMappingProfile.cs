@@ -9,6 +9,12 @@ namespace CVProject.Core.Helper
         public ApiMappingProfile()
         {
             CreateMap<Person, PersonDto>();
+            
+            CreateMap<Experience, ExperienceDto>();
+
+            CreateMap<Education, EducationDto>();
+
+            CreateMap<Project, ProjectDto>();
         }
     }
 }

@@ -15,6 +15,9 @@ namespace CVProject.Infrastructure.Data
         {
         }
         public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Experience> Experiences { get; set; }
+        public virtual DbSet<Education> Educations { get; set; }
+        public virtual DbSet<Project> Projects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
