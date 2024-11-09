@@ -10,7 +10,6 @@ namespace CVProject.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[EnableCors("MyPolicy")]
     public class PersonDetailsController : ControllerBase
     {
         private readonly ILogger<PersonDetailsController> _logger;
