@@ -15,6 +15,10 @@ namespace CVProject.Core.Helper
             CreateMap<Education, EducationDto>();
 
             CreateMap<Project, ProjectDto>();
+
+            CreateMap<Skill, SkillDto>();
+
+            CreateMap<Language, LanguageDto>();
         }
     }
 }

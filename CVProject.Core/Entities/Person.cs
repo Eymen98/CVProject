@@ -46,5 +46,7 @@ namespace CVProject.Core.Entities
         public virtual ICollection<Experience>? Experiences { get; set; }
         public virtual ICollection<Education>? Educations { get; set; }
         public virtual ICollection<Project>? Projects { get; set; }
+        public virtual ICollection<Skill>? Skills { get; set; }
+        public virtual ICollection<Language>? Languages { get; set; }
     }
 }

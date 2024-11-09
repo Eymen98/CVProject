@@ -31,6 +31,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IPersonExperienceRepository, PersonExperienceRepository>();
+//builder.Services.AddScoped<IPersonEducationRepository, PersonEducationRepository>();
+builder.Services.AddScoped<IPersonProjectRepository, PersonProjectRepository>();
 
 //Mapper
 builder.Services.AddAutoMapper(typeof(ApiMappingProfile));

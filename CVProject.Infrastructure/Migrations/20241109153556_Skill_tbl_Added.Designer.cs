@@ -4,6 +4,7 @@ using CVProject.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CVProject.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241109153556_Skill_tbl_Added")]
+    partial class Skill_tbl_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,37 +102,6 @@ namespace CVProject.Infrastructure.Migrations
                     b.HasIndex("PersonId");
 
                     b.ToTable("Experiences");
-                });
-
-            modelBuilder.Entity("CVProject.Core.Entities.Language", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LanguageName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LanguageValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PersonId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Languages");
                 });
 
             modelBuilder.Entity("CVProject.Core.Entities.Person", b =>
@@ -290,15 +262,6 @@ namespace CVProject.Infrastructure.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("CVProject.Core.Entities.Language", b =>
-                {
-                    b.HasOne("CVProject.Core.Entities.Person", "Person")
-                        .WithMany("Languages")
-                        .HasForeignKey("PersonId");
-
-                    b.Navigation("Person");
-                });
-
             modelBuilder.Entity("CVProject.Core.Entities.Project", b =>
                 {
                     b.HasOne("CVProject.Core.Entities.Person", "Person")
@@ -322,8 +285,6 @@ namespace CVProject.Infrastructure.Migrations
                     b.Navigation("Educations");
 
                     b.Navigation("Experiences");
-
-                    b.Navigation("Languages");
 
                     b.Navigation("Projects");
 

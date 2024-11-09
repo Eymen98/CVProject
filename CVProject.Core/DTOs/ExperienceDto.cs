@@ -11,7 +11,7 @@ namespace CVProject.Core.DTOs
     public class ExperienceDto
     {
         public int Id { get; set; }
-        public int PersonId { get; set; }
+        public int? PersonId { get; set; }
         public string? Position { get; set; }
         public string? Company { get; set; }
         public string? Description { get; set; }

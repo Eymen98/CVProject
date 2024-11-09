@@ -40,24 +40,5 @@ namespace CVProject.Api.Controllers
             }
             return new PersonDto();
         }
-
-        //[HttpGet("getpersonexperience")]
-        //public Experience GetPersonExperience(int userId)
-        //{
-        //    try
-        //    {
-        //        var experiencResult = _personRepository.GetAll();
-        //        return view(experiencResult);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        _logger.LogError(ex.ToString());
-        //    }
-        //    return new Experience();
-        //}
-
-
-
     }
 }
