@@ -19,8 +19,9 @@ namespace CVProject.Api.Controllers
         private readonly IPersonEducationRepository _personEducationRepository;
         private readonly IPersonProjectRepository _personProjectRepository;
         private readonly IPersonSkillRepository _personSkillRepository;
-        
-        public PersonDetailsController(ILogger<PersonDetailsController> logger, IMapper mapper, IPersonExperienceRepository personExperienceRepository, IPersonEducationRepository personEducationRepository, IPersonProjectRepository personProjectRepository, IPersonSkillRepository personSkillRepository)
+        private readonly IPersonLanguageRepository _personLanguageRepository;
+
+        public PersonDetailsController(ILogger<PersonDetailsController> logger, IMapper mapper, IPersonExperienceRepository personExperienceRepository, IPersonEducationRepository personEducationRepository, IPersonProjectRepository personProjectRepository, IPersonSkillRepository personSkillRepository, IPersonLanguageRepository personLanguageRepository)
         {
             _logger = logger;
             _mapper = mapper;
@@ -28,6 +29,7 @@ namespace CVProject.Api.Controllers
             _personEducationRepository = personEducationRepository;
             _personProjectRepository = personProjectRepository;
             _personSkillRepository = personSkillRepository;
+            _personLanguageRepository = personLanguageRepository;
         }
 
         [HttpGet("getpersonexperience")]
