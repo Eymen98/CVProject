@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CVProject.Core.DTOs;
+using CVProject.Core.Entities;
 using CVProject.Core.Interfaces.Repository;
 using CVProject.Infrastructure.Repository;
 using Microsoft.AspNetCore.Cors;
@@ -13,17 +14,20 @@ namespace CVProject.Api.Controllers
     public class PersonDetailsController : ControllerBase
     {
         private readonly ILogger<PersonDetailsController> _logger;
+        private readonly IMapper _mapper;
         private readonly IPersonExperienceRepository _personExperienceRepository;
         private readonly IPersonEducationRepository _personEducationRepository;
         private readonly IPersonProjectRepository _personProjectRepository;
-        private readonly IMapper _mapper;
-        public PersonDetailsController(ILogger<PersonDetailsController> logger, IMapper mapper, IPersonExperienceRepository personExperienceRepository, IPersonEducationRepository personEducationRepository, IPersonProjectRepository personProjectRepository)
+        private readonly IPersonSkillRepository _personSkillRepository;
+        
+        public PersonDetailsController(ILogger<PersonDetailsController> logger, IMapper mapper, IPersonExperienceRepository personExperienceRepository, IPersonEducationRepository personEducationRepository, IPersonProjectRepository personProjectRepository, IPersonSkillRepository personSkillRepository)
         {
             _logger = logger;
             _mapper = mapper;
             _personExperienceRepository = personExperienceRepository;
             _personEducationRepository = personEducationRepository;
             _personProjectRepository = personProjectRepository;
+            _personSkillRepository = personSkillRepository;
         }
 
         [HttpGet("getpersonexperience")]
@@ -84,8 +88,12 @@ namespace CVProject.Api.Controllers
                 var projectList= _personProjectRepository.Find(x=>x.PersonId==userId);
                 foreach (var project in projectList)
                 {
-                    var projectDto = _mapper.Map<ProjectDto>(project);
-                    projectDtos.Add(projectDto);
+                    if (projectList!=null)
+                    {
+                        var projectDto = _mapper.Map<ProjectDto>(project);
+                        projectDtos.Add(projectDto);
+                    }
+                    
                 }
 
             }
@@ -96,6 +104,45 @@ namespace CVProject.Api.Controllers
             }
             return projectDtos;
         }
+
+        [HttpGet("getpersonskill")]
+        public List<SkillDto> GetPersonSkill(int userId)
+        {
+            var skillDtos = new List<SkillDto>();
+            try
+            {
+                var skillList=_personSkillRepository.Find(x=>x.PersonId== userId);
+                foreach (var skill in skillList)
+                {
+                    if (skillList!=null)
+                    {
+                        var skillDto= _mapper.Map<SkillDto>(skill);
+                        skillDtos.Add(skillDto);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+            return skillDtos;
+        }
+
+        //[HttpGet("getpersonlanguage")]
+        //public List<LanguageDto> GetPersonLanguage(int userId) 
+        //{
+        //    var languageDtos = new List<LanguageDto>();
+        //    try
+        //    {
+        //        var languageList = _personLanguageRepository.Fİ
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        _logger.LogError(ex.ToString());
+        //    }
+        //    return languageDtos;
+        //}
 
     }
 }
