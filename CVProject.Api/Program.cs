@@ -13,15 +13,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("MyPolicy",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200");
-        });
-
-    options.AddPolicy("AnotherPolicy",
-        policy =>
-        {
-            policy.WithOrigins("http://www.contoso.com")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
+            policy.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
         });
 });
 
