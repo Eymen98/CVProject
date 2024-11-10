@@ -129,21 +129,29 @@ namespace CVProject.Api.Controllers
             return skillDtos;
         }
 
-        //[HttpGet("getpersonlanguage")]
-        //public List<LanguageDto> GetPersonLanguage(int userId) 
-        //{
-        //    var languageDtos = new List<LanguageDto>();
-        //    try
-        //    {
-        //        var languageList = _personLanguageRepository.Fİ
-        //    }
-        //    catch (Exception ex)
-        //    {
+        [HttpGet("getpersonlanguages")]
+        public List<LanguageDto> GetPersonLanguages(int userId)
+        {
+            var languageDtos = new List<LanguageDto>();
+            try
+            {
+                var languageList = _personLanguageRepository.Find(x=>x.PersonId == userId);
+                foreach (var language in languageList)
+                {
+                    if (languageList!=null)
+                    {
+                        var languageDto = _mapper.Map<LanguageDto>(language);
+                        languageDtos.Add(languageDto);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
 
-        //        _logger.LogError(ex.ToString());
-        //    }
-        //    return languageDtos;
-        //}
+                _logger.LogError(ex.ToString());
+            }
+            return languageDtos;
+        }
 
     }
 }
