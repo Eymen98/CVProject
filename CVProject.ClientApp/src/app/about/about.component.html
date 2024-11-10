@@ -1,0 +1,26 @@
+<section class="About py-5 mt-5">
+    <div *ngIf="aboutData" class="container">
+      <div class="row about-content">
+        <div class="left-side col-12 col-md-6">
+          <div class="person-info">   
+              <img class="img-fluid rounded-circle " src="{{ aboutData.imageUrl }}" alt="" >  <!-- "assets/profile.jpg" -->
+              <div class="person-name fw-bold text-center">{{ aboutData.name }} <!-- Suphi -->
+                <br><!-- Bayrak --> {{ aboutData.surName }}
+              </div>
+              <div class="person-jobtitle text-center "><!-- SENIOR SOFTWARE ENGINEER -->{{ aboutData.jobTitle }}</div>
+          </div>
+        </div>
+  
+        <div class="right-side col-12 col-md-6 ps-md-5">
+          <h1 class="hello ">Hey!</h1>
+          <p class="summer ">
+            {{aboutData.summary}}
+          </p>
+          <a href="{{ aboutData.cvUrl }}" class="button btn btn-dark" target="_blank">Download CV</a>
+          <!-- <button type="button" class="btn btn-dark">Download CV</button> -->
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  

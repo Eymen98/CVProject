@@ -1,0 +1,59 @@
+<footer class="py-4 bg-dark text-white text-center position-relative">
+    <div *ngIf="footerData" class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3 mb-md-0 d-flex justify-content-md-start align-items-md-start">
+         <!--  <a class="navbar-brand js-scroll-trigger float-start" href="#page-top" [routerLink]="['/About']"> -->
+            <span class="text-logo ">copyright &copy; 2024 Suphi Bayrak</span>
+            <!-- <span class="slash ms-1">/</span>
+            <span class="job-title ms-1">SENIOR SOFTWARE ENGINEER</span> -->
+            <!-- <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/CvAngular-Client/src/profile.jpg" alt="..." /></span> -->
+          <!-- </a> -->
+        </div>
+  
+        <div class="col-12 col-md-6 d-flex flex-column gap-2">
+          <div class="row footer-info">
+            <div class="col-12 col-sm-4 d-flex flex-column gap-2">
+              <div class="title fw-bold">Call</div>
+              <p class="subtitle">{{footerData.phoneNumber}}</p>
+            </div>
+            
+            <div class="col-12 col-sm-4 d-flex flex-column gap-2">
+              <div class="title fw-bold">Write</div>
+              <p class="subtitle">{{footerData.email}}</p>
+            </div>
+            
+            <div class="col-12 col-sm-4 d-flex flex-column gap-2">
+              <div class="title fw-bold">Follow</div>
+              <ul class="social-list d-flex flex-row gap-3 justify-content-center">
+                <li class="social-item">
+                  <a href="{{footerData.linkedInProfile}}">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="{{footerData.githubProfile}}">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="{{footerData.xProfile}}">
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="{{footerData.instagramProfile}}">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+              
+              
+        </div>
+      </div>    
+    </div>
+    <a (click)="scorllTotop()" class="back-to-top">
+      <i class="fa-solid fa-circle-arrow-up"></i>
+    </a>  
+  </footer>

@@ -1,0 +1,40 @@
+ul li{
+    list-style: none;
+}
+
+.text-logo{
+    font-size: 12px;
+    font-weight: 400;
+    font-style: oblique;
+}
+  
+
+.social-list .social-item a{
+    color: inherit;
+    transition:  all .2s ease-in-out;
+}
+
+.social-list .social-item a:hover{
+    color: var(--color-primary)
+}
+
+.back-to-top {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.back-to-top:hover{
+  color: var(--color-primary);
+}
+
+
+
+@media only screen and (min-width:768px) and (max-width:1200px) {
+    footer .footer-info{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}

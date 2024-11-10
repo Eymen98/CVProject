@@ -1,0 +1,35 @@
+.text-logo{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .navbar .slash{
+    font-size: 20px;
+  }
+  
+  .navbar .job-title{
+    font-size: 13px;
+  }
+  
+  .collapse .nav-link{
+    font-weight:500;
+    transition: all .1s ease-in;
+  }
+  
+  .collapse .nav-link.active{
+    color: var(--color-primary);
+  }
+  
+  .collapse .nav-link:hover{
+    color: var(--color-primary);
+  }
+  
+  @media (max-width:768px) {
+      .navbar-brand{
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar-brand span:nth-child(2){
+        display: none;
+      } 
+  }

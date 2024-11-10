@@ -1,0 +1,32 @@
+<section class="resume-section">
+    <div class="container resume-section-content">
+        <h2 class="pt-2 text-uppercase">Skills</h2>
+        <div *ngIf="skillData"  class="row skills">
+            <div class="col-12 mb-2 col-md-6 mb-md-0">
+                <ul *ngFor="let skill of skillData" class="skill-list d-grid gap-2">
+                    <li class="list-item d-flex align-items-center justify-content-center gap-3 "> 
+                        <div class="fw-bold">{{ skill.skillName }}</div> 
+                        <div class="progress flex-grow-1" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 8px">
+                            <span class="progress-bar value-color" [ngStyle]="{ width: skill.skillValue + '%' }">{{ skill.skillValue }} %</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<hr>
+
+        <h2 class="text-uppercase">Languages</h2>
+        <div *ngIf="languageData" class="row language">
+            <div class="col-12 mb-3 col-md-6 mb-md-0">
+                <ul *ngFor="let language of languageData" class="skill-list d-grid gap-2">
+                    <li class="list-item d-flex align-items-center justify-content-center gap-3 "> 
+                        <div class="fw-bold">{{ language.languageName }}</div> 
+                        <div class="progress flex-grow-1" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 8px">
+                            <span class="progress-bar value-color" [ngStyle]="{ width: language.languageValue + '%' }">{{ language.languageValue }} %</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
