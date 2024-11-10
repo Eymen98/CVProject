@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CVProject.Core.Attributes;
 using CVProject.Core.DTOs;
 using CVProject.Core.Entities;
 using CVProject.Core.Interfaces.Repository;
@@ -10,6 +11,7 @@ namespace CVProject.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [BasicAuth]
     public class PersonDetailsController : ControllerBase
     {
         private readonly ILogger<PersonDetailsController> _logger;

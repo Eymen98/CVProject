@@ -1,5 +1,4 @@
 using CVProject.Api;
-using CVProject.Api.Middlewares;
 using CVProject.Core.Helper;
 using CVProject.Core.Interfaces.Repository;
 using CVProject.Infrastructure.Data;
@@ -30,12 +29,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<BasicAuthOptions>(builder.Configuration.GetSection("Credentials"));
 
 
 var app = builder.Build();
 
-app.UseMiddleware<BasicAuthMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
