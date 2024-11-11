@@ -8,10 +8,14 @@ import { ApiService } from '../services/api.service';
 })
 export class ExperienceComponent implements OnInit {
   experinceData:any;
+/*   experinceDataLength: number = 0; */
 
   constructor(private apiService:ApiService){};
 
   ngOnInit() {
+    /* if(this.experinceData){
+      this.experinceDataLength=this.experinceData.length;
+    } */
     this.GetExperince();
   }
 
