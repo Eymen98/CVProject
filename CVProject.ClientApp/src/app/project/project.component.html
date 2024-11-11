@@ -1,7 +1,7 @@
 <section class="Projects resume-section">
     <div *ngIf="projectData" class="container resume-section-content">
       <h2 class="mb-5 pt-1 text-center">Projects</h2>
-      <div *ngFor="let project of projectData" class="d-flex flex-column flex-md-row justify-content-between mb-1">
+      <div *ngFor="let project of projectData" class="d-flex flex-column flex-md-row justify-content-between mb-1 project-item">
         <div class="flex-grow-1">
           <h3 class="mb-0 position">{{ project.projectName }}</h3>
           <p>{{ project.description }}</p>
@@ -10,7 +10,6 @@
           <span class="text-primary date">{{ project.period }}</span>
         </div>
       </div>
-  <hr />
     </div>
   </section>
   

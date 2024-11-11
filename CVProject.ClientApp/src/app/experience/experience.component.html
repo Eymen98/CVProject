@@ -1,14 +1,13 @@
 <section class="Experience resume-section">
     <div *ngIf="experinceData" class="container resume-section-content">
         <h2 class="mb-5 pt-1 text-center">Experience</h2>
-      <div *ngFor="let experience of experinceData" class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div *ngFor="let experience of experinceData" class="d-flex flex-column flex-md-row justify-content-between mb-5 experience-item">
         <div class="flex-grow-1">
           <h3 class="mb-0 position">{{ experience.position }}</h3>
           <div class="subheading mb-3 company">{{ experience.company }}</div>
           <p>{{ experience.description }}</p>
         </div>
         <div class="flex-shrink-0"><span class="text-primary date">{{ experience.employmentDuration }}</span></div>
-        <hr>
       </div>
     </div>
 </section>

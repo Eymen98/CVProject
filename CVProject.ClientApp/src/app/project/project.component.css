@@ -54,3 +54,9 @@ section.resume-section .resume-section-content {
     color: var(--color-primary) !important;
     font-weight: 500;
 }
+
+.project-item:not(:last-child) {
+  border-bottom: 1px solid #b9afaf; 
+  padding-bottom: 1rem;          
+  margin-bottom: 1rem !important;           
+}
