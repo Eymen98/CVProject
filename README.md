@@ -12,6 +12,7 @@ This project is a full-stack portfolio website featuring a dynamic front end dev
 - **Clean Architecture**: Separates concerns, making the application more maintainable.
 - **RESTful API**: Enables smooth data exchange between the client and server.
 - **BasicAuthAttribute**: Adds a layer of basic authentication for securing API endpoints.
+- **Logger**: For logging API requests and errors.
 ### Frontend
 - **Angular**: Develops the client interface, making it a responsive single-page application (SPA).
 - **Bootstrap**: Styles the frontend for a responsive and modern design.
@@ -21,6 +22,7 @@ This project is a full-stack portfolio website featuring a dynamic front end dev
 - **Secure API**: Basic authentication ensures only authorized requests access sensitive endpoints.
 - **Responsive Design**: Optimized for various screen sizes using Bootstrap.
 - **Dynamic Navigation**: Navigation is handled by Angular Router, allowing seamless transitions between pages.
+- **Logging**: Logs API requests and error handling.
 # Video 
 https://github.com/user-attachments/assets/7584f630-2262-4d05-a3e3-7962a22e8c7d
 
