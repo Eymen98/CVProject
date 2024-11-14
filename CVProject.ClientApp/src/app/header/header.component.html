@@ -1,11 +1,9 @@
-<!-- Navigation-->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark text-dark fixed-top" id="sideNav">
     <div *ngIf="headerData" class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top" [routerLink]="['/About']">
-            <span class="text-logo"><!-- Suphi Bayrak -->{{headerData.name}} {{headerData.surName}}</span>
+            <span class="text-logo">{{headerData.name}} {{headerData.surName}}</span>
             <span class="slash ms-1">/</span>
             <span class="job-title ms-1">{{headerData.jobTitle}}</span>
-            <!-- <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/CvAngular-Client/src/profile.jpg" alt="..." /></span> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
