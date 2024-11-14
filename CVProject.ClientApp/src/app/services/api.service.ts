@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ApiService {
-  
-  
-  
+
   private baseUrl= 'http://localhost:4201/api';
 
   private username = 'eymen';
