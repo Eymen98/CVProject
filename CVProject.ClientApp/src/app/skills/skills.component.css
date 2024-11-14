@@ -32,12 +32,21 @@ section.resume-section .resume-section-content {
     }
 }
 
-.progress-bar{
+.skill-block .skill-name{
+  font-weight: 500;
+}
+
+.skill-block .progress{
+  height: 11px;
+  width: 90%;
+}
+
+.skill-block .progress-bar{
   background-color: var(--color-primary);
 }
 
-.value-color{
-  color: #000;
+.skill-block .value-color{
+  color: #000000;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
 }

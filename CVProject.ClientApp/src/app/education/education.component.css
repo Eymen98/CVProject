@@ -55,8 +55,12 @@ section.resume-section .resume-section-content {
     font-weight: 500;
 }
 
-.Education p{
-    
+.Education p{    
     color: var(--color-primary) !important;
-    
+}
+
+.education-item:not(:last-child) {
+  border-bottom: 1px solid #b9afaf; 
+  padding-bottom: 1rem;          
+  margin-bottom: 2rem !important;           
 }

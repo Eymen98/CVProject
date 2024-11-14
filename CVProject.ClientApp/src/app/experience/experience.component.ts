@@ -9,6 +9,7 @@ import { ApiService } from '../services/api.service';
 export class ExperienceComponent implements OnInit {
   experinceData:any;
 
+
   constructor(private apiService:ApiService){};
 
   ngOnInit() {
