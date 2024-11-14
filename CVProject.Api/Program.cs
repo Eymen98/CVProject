@@ -1,13 +1,17 @@
-using CVProject.Api;
 using CVProject.Core.Helper;
 using CVProject.Core.Interfaces.Repository;
 using CVProject.Infrastructure.Data;
 using CVProject.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(option => option.AddPolicy("MyPolicy", p => p.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+// Set up Serilog to read from configuration
+builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+
+
+builder.Services.AddCors(option => option.AddPolicy("MyPolicy", p => p.WithOrigins("http://localhost:4200", "https://suphibayrak.com").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -33,6 +37,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
