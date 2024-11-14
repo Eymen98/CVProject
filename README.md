@@ -21,6 +21,6 @@ This project is a full-stack portfolio website featuring a dynamic front end dev
 - **Secure API**: Basic authentication ensures only authorized requests access sensitive endpoints.
 - **Responsive Design**: Optimized for various screen sizes using Bootstrap.
 - **Dynamic Navigation**: Navigation is handled by Angular Router, allowing seamless transitions between pages.
- 
-
+# Video 
 https://github.com/user-attachments/assets/7584f630-2262-4d05-a3e3-7962a22e8c7d
+
