@@ -23,3 +23,4 @@ This project is a full-stack portfolio website featuring a dynamic front end dev
 - **Dynamic Navigation**: Navigation is handled by Angular Router, allowing seamless transitions between pages.
  
 
+https://github.com/user-attachments/assets/7584f630-2262-4d05-a3e3-7962a22e8c7d
