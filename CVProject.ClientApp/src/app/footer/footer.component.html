@@ -14,12 +14,16 @@
           <div class="row footer-info">
             <div class="col-12 col-sm-4 d-flex flex-column gap-2">
               <div class="title fw-bold">Call</div>
-              <p class="subtitle">{{footerData.phoneNumber}}</p>
+              <p class="subtitle">
+                <a href="tel:{{footerData.phoneNumber}}" style="text-decoration: none; color: #fff;">{{footerData.phoneNumber}}</a>
+              </p>
             </div>
             
             <div class="col-12 col-sm-4 d-flex flex-column gap-2">
               <div class="title fw-bold">Write</div>
-              <p class="subtitle">{{footerData.email}}</p>
+              <p class="subtitle">
+                <a href="mailto:{{footerData.email}}" style="text-decoration: none; color: #fff;">{{footerData.email}}</a>
+              </p>
             </div>
             
             <div class="col-12 col-sm-4 d-flex flex-column gap-2">
