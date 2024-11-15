@@ -1,6 +1,11 @@
+.About {
+    padding: 70px 0px 10px 0px;
+}
+
+/* ! LEFT-SİDE STRAT */
 .left-side{
     width: 538px;
-    height: 600px;
+    height: 570px;
     background-color: var(--color-secondary);
     position: relative;
 }  
@@ -11,7 +16,7 @@
     background-color: var(--color-third);
     position: absolute;
     bottom: 0px;
-    top: 90px;
+    top: 75px;
     left: 180px;
     box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
 }  
@@ -40,6 +45,13 @@
     padding: 11px 0px;
     letter-spacing: 0.25em;
 }
+/* ! LEFT-SİDE END */
+
+
+/* ! RİGHT-SİDE START */
+.right-side{
+    margin-top: 40px;
+}
 
 .right-side .hello{
     font-size: 50px;
@@ -61,7 +73,6 @@
 	color: white;
 	padding: .75rem 1.4rem;
 	border-radius: .25rem;
-	/* font-weight: var(--font-medium); */
 	position: relative;
 	z-index: 1;
     width: 150px;
@@ -89,28 +100,1192 @@
 	transform: scale(1);
     color: black !important;
 }
+/* ! RİGHT-SİDE END */
 
-@media (max-width:580px) {
-    .left-side .person-info{
-        width: 375px;
-        height: 400px;
-        background-color: var(--color-third);
-        position: absolute;
-        bottom: 0px;
-        top: 90px;
-        left: 90px;
-        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
-    } 
-    
+
+
+/* ? RESPOSİVE LEFT SİDE */
+@media (min-width:260px) and (max-width:265px){
     .left-side{
         width: 440px;
         height: 600px;
         background-color: var(--color-secondary);
-        position: relative;
+        position: relative ;
     }  
+
+    .left-side .person-info{
+        width: 245px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 245px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.03em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 15px !important;
+    }
 }
 
-@media (max-width:428px) {
+@media (min-width:265px) and (max-width:270px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 250px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 250px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.05em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 20px !important;
+    }
+}
+
+@media (min-width:270px) and (max-width:275px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 255px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 255px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.06em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 20px !important;
+    }
+}
+
+@media (min-width:275px) and (max-width:280px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 260px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 6px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 260px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.07em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 25px !important;
+    }
+}
+
+@media (min-width:280px) and (max-width:285px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 265px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 265px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.08em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 25px !important;
+    }
+}
+
+@media (min-width:285px) and (max-width:290px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 270px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 270px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.10em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 28px !important;
+    }
+}
+
+@media (min-width:290px) and (max-width:295px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 275px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 275px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.11em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 31px !important;
+    }
+}
+
+@media (min-width:295px) and (max-width:300px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 280px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 280px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.12em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 35px !important;
+    }
+}
+
+@media (min-width:300px) and (max-width:305px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 285px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 285px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.13em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 38px !important;
+    }
+}
+
+@media (min-width:305px) and (max-width:310px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 290px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 290px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.14em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 40px !important;
+    }
+}
+
+@media (min-width:310px) and (max-width:315px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 295px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 295px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.16em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 42px !important;
+    }
+}
+
+@media (min-width:315px) and (max-width:320px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 300px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 300px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.17em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 45px !important;
+    }
+}
+
+@media (min-width:320px) and (max-width:325px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 305px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 305px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.18em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 48px !important;
+    }
+}
+
+@media (min-width:325px) and (max-width:330px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 310px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 310px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.19em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 50px !important;
+    }
+}
+
+@media (min-width:330px) and (max-width:335px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 315px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 315px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.21em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 51px !important;
+    }
+}
+
+@media (min-width:335px) and (max-width:340px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 320px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8.5px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 320px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.22em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 53px !important;
+    }
+}
+
+@media (min-width:340px) and (max-width:345px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 325px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 325px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.23em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 55px !important;
+    }
+}
+
+@media (min-width:345px) and (max-width:350px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 330px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 330px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.24em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 57px !important;
+    }
+}
+
+@media (min-width:350px) and (max-width:355px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 335px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 335px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 60px !important;
+    }
+}
+
+@media (min-width:355px) and (max-width:360px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 340px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 340px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 61px !important;
+    }
+}
+
+@media (min-width:360px) and (max-width:365px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 345px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 345px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 63px !important;
+    }
+}
+
+@media (min-width:365px) and (max-width:370px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 350px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 7.8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 350px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 65px !important;
+    }
+}
+
+@media (min-width:370px) and (max-width:375px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 355px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 355px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 68px !important;
+    }
+}
+
+@media (min-width:375px) and (max-width:380px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 360px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 360px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 70px !important;
+    }
+}
+
+
+@media (min-width:380px) and (max-width:385px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 365px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 8px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+    } 
+
+    .person-info .person-jobtitle{
+        background-color: white;
+        height: 50px;
+        width: 365px;
+        position: absolute ;
+        bottom: 0px ;
+        font-size: 17px;
+        padding: 11px 0px;
+        letter-spacing: 0.25em;
+    }
+
+    .person-info .img-fluid{
+        margin-left: 75px !important;
+    }
+}
+
+
+@media (min-width:385px) and (max-width:390px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 6px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:390px) and (max-width:395px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 9.5px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:395px) and (max-width:400px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 11px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:400px) and (max-width:405px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 15px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:405px) and (max-width:410px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 16px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:410px) and (max-width:415px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 19px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:415px) and (max-width:420px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 20px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:420px) and (max-width:425px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 24px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:425px) and (max-width:430px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 29px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:430px) and (max-width:435px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 27px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+@media (min-width:435px) and (max-width:1200px){
+    .left-side{
+        width: 440px;
+        height: 600px;
+        background-color: var(--color-secondary);
+        position: relative ;
+    }  
+
+    .left-side .person-info{
+        width: 375px;
+        height: 400px;
+        background-color: var(--color-third);
+        position: absolute ;
+        bottom: 0px ;
+        top: 90px ;
+        left: 33px ;
+        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
+        
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ! RESPONSİVE RİGHT BAR */
+
+@media  (min-width:992px) and (max-width:1200px) {
+    .about-content{
+      flex-direction: column;
+      display: flex;
+      justify-content: center !important;
+      align-items: center !important; 
+    }
+
+    .right-side{
+        margin-top: 0px !important;
+        padding-left: 20px !important;
+    }
+
+    .right-side a{
+        margin-bottom: 10px;
+    }
+
+    .summer{
+        width: 500px;
+        
+    } 
+}
+
+@media  (min-width:768px) and (max-width:992px) {
+    .about-content{
+      flex-direction: column;
+      display: flex;
+      justify-content: center !important;
+      align-items: center !important; 
+    }
+
+    .right-side{
+        margin-top: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .right-side a{
+        margin-bottom: 10px;
+    }
+
+    .summer{
+        width: 360px;
+        
+    } 
+}
+
+
+/* @media (max-width:428px) {
     .left-side .person-info{
         width: 375px;
         height: 400px;
@@ -129,47 +1304,4 @@
         position: relative;
     }  
   
-}
-
-@media (max-width:390px) {
-    .left-side .person-info{
-        width: 375px;
-        height: 400px;
-        background-color: var(--color-third);
-        position: absolute;
-        bottom: 0px;
-        top: 90px;
-        left: 8px;
-        box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.83);
-    } 
-    
-    .left-side{
-        width: 440px;
-        height: 600px;
-        background-color: var(--color-secondary);
-        position: relative;
-    }  
-  
-}
-
-@media only screen and (min-width:576px) and (max-width:1200px) {
-    .about-content{
-      flex-direction: column;
-      display: flex;
-       justify-content: center !important;
-      align-items: center !important; 
-      
-      
-     /*  display: flex;
-      flex-wrap: wrap; */
-    }
-
-    .summer{
-        width: 370px;
-        
-    } 
-
-
-    
-  
-}
+} */

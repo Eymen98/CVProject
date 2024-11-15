@@ -1,5 +1,5 @@
-<section class="About py-5 mt-5">
-    <div *ngIf="aboutData" class="container">
+<section class="About">
+    <div *ngIf="aboutData" class="container ">
       <div class="row about-content">
         <div class="left-side col-12 col-md-6">
           <div class="person-info">   
@@ -7,16 +7,18 @@
               <div class="person-name fw-bold text-center">{{ aboutData.name }} 
                 <br> {{ aboutData.surName }}
               </div>
-              <div class="person-jobtitle text-center ">{{ aboutData.jobTitle }}</div>
+              <div class="person-jobtitle text-center ">
+                <div class="jobTitle">{{ aboutData.jobTitle }}</div>
+              </div>
           </div>
         </div>
   
-        <div class="right-side col-12 col-md-6 ps-md-5 ">
+        <div class="right-side col-12 col-md-6 ps-md-5 mt-md-5 mt-0">
           <h1 class="hello ">Hey!</h1>
           <p class="summer ">
             {{aboutData.summary}} 
           </p>
-          <a href="{{ aboutData.cvUrl }}" class="button btn btn-dark" target="_blank">Download CV</a>
+          <a href="{{ aboutData.cvUrl }}" class="button btn btn-dark mb-3" target="_blank">Download CV</a>
         </div>
       </div>
   
