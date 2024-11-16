@@ -41,6 +41,7 @@ namespace CVProject.Core.Entities
         public string? Summary { get; set; }
         public string? ImageUrl { get; set; }
         public string? CvUrl { get; set; }
+        public string? CvUrlTr { get; set; }
         public string? XProfile { get; set; }
         public string? InstagramProfile { get; set; }
         public virtual ICollection<Experience>? Experiences { get; set; }

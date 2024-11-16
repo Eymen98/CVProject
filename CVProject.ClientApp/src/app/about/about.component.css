@@ -71,7 +71,7 @@
 	column-gap: .5rem;
 	background-color: black !important;
 	color: white;
-	padding: .75rem 1.4rem;
+	padding: .75rem 8px;
 	border-radius: .25rem;
 	position: relative;
 	z-index: 1;
@@ -1261,3 +1261,12 @@
         
     } 
 }
+
+
+/* ! buttons resposive */
+/* @media (min-width: 260px) and (max-width: 340){
+    .CvButtons {
+       display: flex;
+       flex-direction: row;
+    }
+} */
