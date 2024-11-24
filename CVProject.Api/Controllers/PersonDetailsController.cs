@@ -21,8 +21,10 @@ namespace CVProject.Api.Controllers
         private readonly IPersonProjectRepository _personProjectRepository;
         private readonly IPersonSkillRepository _personSkillRepository;
         private readonly IPersonLanguageRepository _personLanguageRepository;
+        private readonly IConfiguration _configuration;
 
-        public PersonDetailsController(ILogger<PersonDetailsController> logger, IMapper mapper, IPersonExperienceRepository personExperienceRepository, IPersonEducationRepository personEducationRepository, IPersonProjectRepository personProjectRepository, IPersonSkillRepository personSkillRepository, IPersonLanguageRepository personLanguageRepository)
+
+        public PersonDetailsController(ILogger<PersonDetailsController> logger, IMapper mapper, IPersonExperienceRepository personExperienceRepository, IPersonEducationRepository personEducationRepository, IPersonProjectRepository personProjectRepository, IPersonSkillRepository personSkillRepository, IPersonLanguageRepository personLanguageRepository, IConfiguration configuration)
         {
             _logger = logger;
             _mapper = mapper;
@@ -31,16 +33,18 @@ namespace CVProject.Api.Controllers
             _personProjectRepository = personProjectRepository;
             _personSkillRepository = personSkillRepository;
             _personLanguageRepository = personLanguageRepository;
+            _configuration = configuration;
         }
 
         [HttpGet("getpersonexperience")]
-        public List<ExperienceDto> GetPersonExperience(int userId)
+        public List<ExperienceDto> GetPersonExperience()
         {
 
             var experienceDtos = new List<ExperienceDto>();
             try
             {
-                var experienceList = _personExperienceRepository.Find(x=> x.PersonId == userId);
+                int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
+                var experienceList = _personExperienceRepository.Find(x=> x.PersonId == uid);
                 foreach (var experience in experienceList)
                 {
                     if (experience!=null)
@@ -49,8 +53,6 @@ namespace CVProject.Api.Controllers
                         experienceDtos.Add(experienceDto);
                     }
                 }
-                
-                
             }
             catch (Exception ex)
             {
@@ -60,12 +62,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersoneducation")]
-        public List<EducationDto> GetPersonEducation(int userId)
+        public List<EducationDto> GetPersonEducation()
         {
             var educationDtos = new List<EducationDto>();
             try
             {
-                var educationList=_personEducationRepository.Find(x=>x.PersonId == userId);
+                int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
+                var educationList = _personEducationRepository.Find(x => x.PersonId == uid);
                 foreach(var educ in educationList)
                 {
                     if (educationList != null)
@@ -83,12 +86,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersonproject")]
-        public List<ProjectDto> GetPersonProject(int userId)
+        public List<ProjectDto> GetPersonProject()
         {
             var projectDtos = new List<ProjectDto>();
             try
             {
-                var projectList= _personProjectRepository.Find(x=>x.PersonId==userId);
+                int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
+                var projectList = _personProjectRepository.Find(x => x.PersonId == uid);
                 foreach (var project in projectList)
                 {
                     if (projectList!=null)
@@ -96,25 +100,23 @@ namespace CVProject.Api.Controllers
                         var projectDto = _mapper.Map<ProjectDto>(project);
                         projectDtos.Add(projectDto);
                     }
-                    
                 }
-
             }
             catch (Exception ex)
             {
-
                 _logger.LogError(ex.ToString());
             }
             return projectDtos;
         }
 
         [HttpGet("getpersonskill")]
-        public List<SkillDto> GetPersonSkill(int userId)
+        public List<SkillDto> GetPersonSkill()
         {
             var skillDtos = new List<SkillDto>();
             try
             {
-                var skillList=_personSkillRepository.Find(x=>x.PersonId== userId);
+                int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
+                var skillList = _personSkillRepository.Find(x => x.PersonId == uid);
                 foreach (var skill in skillList)
                 {
                     if (skillList!=null)
@@ -132,12 +134,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersonlanguages")]
-        public List<LanguageDto> GetPersonLanguages(int userId)
+        public List<LanguageDto> GetPersonLanguages()
         {
             var languageDtos = new List<LanguageDto>();
             try
             {
-                var languageList = _personLanguageRepository.Find(x=>x.PersonId == userId);
+                int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
+                var languageList = _personLanguageRepository.Find(x => x.PersonId == uid);
                 foreach (var language in languageList)
                 {
                     if (languageList!=null)

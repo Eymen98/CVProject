@@ -14,19 +14,24 @@ namespace CVProject.Api.Controllers
         private readonly ILogger<PersonController> _logger;
         private readonly IPersonRepository _personRepository;
         private readonly IMapper _mapper;
-        public PersonController(ILogger<PersonController> logger, IPersonRepository personRepository, IMapper mapper)
+        private readonly IConfiguration _configuration;
+        public PersonController(ILogger<PersonController> logger, IPersonRepository personRepository, IMapper mapper, IConfiguration configuration)
         {
             _logger = logger;
             _personRepository = personRepository;
             _mapper = mapper;
+            _configuration = configuration;
         }
 
         [HttpGet("getpersoninformations")]
-        public PersonDto GetPersonInformations(int userId)
+        public PersonDto GetPersonInformations()
         {
             try
             {
-                var personEntity = _personRepository.FindOne(x => x.Id == userId);
+                int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
+
+                var personEntity = _personRepository.FindOne(x => x.Id == uid);
+                
                 if (personEntity != null)
                 {
                     var personDto = _mapper.Map<PersonDto>(personEntity);
