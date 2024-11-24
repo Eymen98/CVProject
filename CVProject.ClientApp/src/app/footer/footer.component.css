@@ -9,12 +9,14 @@ ul li{
 }
   
 
-.social-list .social-item a{
+.social-list .social-item a,.subtitle a{
     color: inherit;
     transition:  all .2s ease-in-out;
+    text-decoration: none;
 }
 
-.social-list .social-item a:hover{
+.social-list .social-item a:hover,
+.subtitle a:hover{
     color: var(--color-primary)
 }
 
