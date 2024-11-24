@@ -25,32 +25,32 @@ export class ApiService {
 
   Getabout():Observable<any>{
     const headers = this.createAuthHeader();
-    return this.http.get<any>(`${this.baseUrl}/Person/getpersoninformations?userId=1`,{headers});
+    return this.http.get<any>(`${this.baseUrl}/Person/getpersoninformations`,{headers});
   }
 
   Getexperince():Observable<any>{
     const headers = this.createAuthHeader();
-    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonexperience?userId=1`,{headers});
+    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonexperience`,{headers});
   }
 
   Geteducation():Observable<any>{
     const headers = this.createAuthHeader();
-    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersoneducation?userId=1`,{headers});
+    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersoneducation`,{headers});
   }
 
   Getproject():Observable<any>{
     const headers = this.createAuthHeader();
-    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonproject?userId=1`,{headers})
+    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonproject`,{headers})
   }
 
   Getskill():Observable<any>{
     const headers = this.createAuthHeader();
-    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonskill?userId=1`,{headers});
+    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonskill`,{headers});
   }
 
   Getlanguage():Observable<any>{
     const headers = this.createAuthHeader();
-    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonlanguages?userId=1`,{headers})
+    return this.http.get<any>(`${this.baseUrl}/PersonDetails/getpersonlanguages`,{headers})
   }
 
 }
