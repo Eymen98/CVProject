@@ -10,7 +10,6 @@ namespace CVProject.Core.DTOs
 {
     public class PersonDto
     {
-        public int Id { get; set; }
         public string? JobTitle { get; set; }
         public string? Name { get; set; }
         public string? SurName { get; set; }
@@ -24,6 +23,5 @@ namespace CVProject.Core.DTOs
         public string? CvUrlTr { get; set; }
         public string? InstagramProfile { get; set; }
         public string? XProfile { get; set; }
-        
     }
 }

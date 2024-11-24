@@ -10,8 +10,6 @@ namespace CVProject.Core.DTOs
 {
     public class SkillDto
     {
-        public int Id { get; set; }
-        public int? PersonId { get; set; }
         public string? SkillName { get; set; }
         public string? SkillValue { get; set; }
     }

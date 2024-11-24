@@ -10,12 +10,9 @@ namespace CVProject.Core.DTOs
 {
     public class EducationDto
     {
-        public int Id { get; set; }
-        public int? PersonId { get; set; }
         public string? Degree { get; set; }
         public string? Institution { get; set; }
         public string? Grade { get; set; }
         public string? Period { get; set; }
-       
     }
 }
