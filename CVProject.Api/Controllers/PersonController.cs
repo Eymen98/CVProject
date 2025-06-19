@@ -24,13 +24,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersoninformations")]
-        public PersonDto GetPersonInformations()
+        public async Task<PersonDto> GetPersonInformations()
         {
             try
             {
                 int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
 
-                var personEntity = _personRepository.FindOne(x => x.Id == uid);
+                var personEntity = await _personRepository.FindOneAsync(x => x.Id == uid);
                 
                 if (personEntity != null)
                 {

@@ -10,14 +10,15 @@ namespace CVProject.Core.Interfaces.Repository
     public interface IRepository<TEntity> where TEntity : class
     {
         IQueryable<TEntity> GetAll(FindOptions? findOptions = null);
-        TEntity FindOne(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null);
-        IQueryable<TEntity> Find(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null);
-        void Add(TEntity entity);
-        void AddMany(IEnumerable<TEntity> entities);
-        void Update(TEntity entity);
-        void Delete(TEntity entity);
-        void DeleteMany(Expression<Func<TEntity, bool>> predicate);
-        bool Any(Expression<Func<TEntity, bool>> predicate);
-        int Count(Expression<Func<TEntity, bool>> predicate);
+        Task<List<TEntity>> FindListAsync(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null);
+        Task<TEntity?> FindOneAsync(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null);
+        Task AddAsync(TEntity entity);
+        Task AddManyAsync(IEnumerable<TEntity> entities);
+        Task UpdateAsync(TEntity entity);
+        Task DeleteAsync(TEntity entity);
+        Task DeleteManyAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate);
     }
+
 }

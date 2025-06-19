@@ -37,14 +37,14 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersonexperience")]
-        public List<ExperienceDto> GetPersonExperience()
+        public async Task<List<ExperienceDto>> GetPersonExperience()
         {
 
             var experienceDtos = new List<ExperienceDto>();
             try
             {
                 int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
-                var experienceList = _personExperienceRepository.Find(x=> x.PersonId == uid);
+                var experienceList = await _personExperienceRepository.FindListAsync(x=> x.PersonId == uid);
                 foreach (var experience in experienceList)
                 {
                     if (experience!=null)
@@ -62,13 +62,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersoneducation")]
-        public List<EducationDto> GetPersonEducation()
+        public async Task<List<EducationDto>> GetPersonEducation()
         {
             var educationDtos = new List<EducationDto>();
             try
             {
                 int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
-                var educationList = _personEducationRepository.Find(x => x.PersonId == uid);
+                var educationList = await _personEducationRepository.FindListAsync(x => x.PersonId == uid);
                 foreach(var educ in educationList)
                 {
                     if (educationList != null)
@@ -86,13 +86,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersonproject")]
-        public List<ProjectDto> GetPersonProject()
+        public async Task<List<ProjectDto>> GetPersonProject()
         {
             var projectDtos = new List<ProjectDto>();
             try
             {
                 int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
-                var projectList = _personProjectRepository.Find(x => x.PersonId == uid);
+                var projectList = await _personProjectRepository.FindListAsync(x => x.PersonId == uid);
                 foreach (var project in projectList)
                 {
                     if (projectList!=null)
@@ -110,13 +110,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersonskill")]
-        public List<SkillDto> GetPersonSkill()
+        public async Task<List<SkillDto>> GetPersonSkill()
         {
             var skillDtos = new List<SkillDto>();
             try
             {
                 int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
-                var skillList = _personSkillRepository.Find(x => x.PersonId == uid);
+                var skillList = await _personSkillRepository.FindListAsync(x => x.PersonId == uid);
                 foreach (var skill in skillList)
                 {
                     if (skillList!=null)
@@ -134,13 +134,13 @@ namespace CVProject.Api.Controllers
         }
 
         [HttpGet("getpersonlanguages")]
-        public List<LanguageDto> GetPersonLanguages()
+        public async Task<List<LanguageDto>> GetPersonLanguages()
         {
             var languageDtos = new List<LanguageDto>();
             try
             {
                 int uid = Convert.ToInt32(_configuration.GetValue<string>("UId"));
-                var languageList = _personLanguageRepository.Find(x => x.PersonId == uid);
+                var languageList = await _personLanguageRepository.FindListAsync(x => x.PersonId == uid);
                 foreach (var language in languageList)
                 {
                     if (languageList!=null)

@@ -17,69 +17,80 @@ namespace CVProject.Infrastructure.Repository
         {
             _context = context;
         }
-        public void Add(TEntity entity)
+
+        public async Task AddAsync(TEntity entity)
         {
-            _context.Set<TEntity>().Add(entity);
-            _context.SaveChanges();
+            await _context.Set<TEntity>().AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
-        public void AddMany(IEnumerable<TEntity> entities)
+
+        public async Task AddManyAsync(IEnumerable<TEntity> entities)
         {
-            _context.Set<TEntity>().AddRange(entities);
-            _context.SaveChanges();
+            await _context.Set<TEntity>().AddRangeAsync(entities);
+            await _context.SaveChangesAsync();
         }
-        public void Delete(TEntity entity)
+
+        public async Task DeleteAsync(TEntity entity)
         {
             _context.Set<TEntity>().Remove(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
-        public void DeleteMany(Expression<Func<TEntity, bool>> predicate)
+
+        public async Task DeleteManyAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            var entities = Find(predicate);
+            var entities = await FindListAsync(predicate);
             _context.Set<TEntity>().RemoveRange(entities);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
-        public TEntity FindOne(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null)
+
+        public async Task<TEntity?> FindOneAsync(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null)
         {
-            return Get(findOptions).FirstOrDefault(predicate)!;
+            return await Get(findOptions).FirstOrDefaultAsync(predicate);
         }
-        public IQueryable<TEntity> Find(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null)
+
+        public async Task<List<TEntity>> FindListAsync(Expression<Func<TEntity, bool>> predicate, FindOptions? findOptions = null)
         {
-            return Get(findOptions).Where(predicate);
+            return await Get(findOptions).Where(predicate).ToListAsync();
         }
+
         public IQueryable<TEntity> GetAll(FindOptions? findOptions = null)
         {
             return Get(findOptions);
         }
-        public void Update(TEntity entity)
+
+        public async Task UpdateAsync(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
-        public bool Any(Expression<Func<TEntity, bool>> predicate)
+
+        public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            return _context.Set<TEntity>().Any(predicate);
+            return await _context.Set<TEntity>().AnyAsync(predicate);
         }
-        public int Count(Expression<Func<TEntity, bool>> predicate)
+
+        public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            return _context.Set<TEntity>().Count(predicate);
+            return await _context.Set<TEntity>().CountAsync(predicate);
         }
-        private DbSet<TEntity> Get(FindOptions? findOptions = null)
+
+        private IQueryable<TEntity> Get(FindOptions? findOptions = null)
         {
             findOptions ??= new FindOptions();
-            var entity = _context.Set<TEntity>();
-            if (findOptions.IsAsNoTracking && findOptions.IsIgnoreAutoIncludes)
+            var entity = _context.Set<TEntity>().AsQueryable();
+
+            if (findOptions.IsIgnoreAutoIncludes)
             {
-                entity.IgnoreAutoIncludes().AsNoTracking();
+                entity = entity.IgnoreAutoIncludes();
             }
-            else if (findOptions.IsIgnoreAutoIncludes)
+
+            if (findOptions.IsAsNoTracking)
             {
-                entity.IgnoreAutoIncludes();
+                entity = entity.AsNoTracking();
             }
-            else if (findOptions.IsAsNoTracking)
-            {
-                entity.AsNoTracking();
-            }
+
             return entity;
         }
     }
+
 }
